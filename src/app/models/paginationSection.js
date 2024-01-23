@@ -11,15 +11,22 @@ const PaginationSection = ({
   currentPage,
   setCurrentPage,
 }) => {
+
+  function OnChangeCompiled(value) {
+    setRecordsPerPage(value)
+    setCurrentPage(1)
+  }
+
   return (
     <div style={paginationContainer}>
       <Select
         placeholder="Limite por Página"
         withCheckIcon={false}
         rightSection={" "}
-        data={["5", "10", "15"]}
+        data={["5", "10", "20"]}
         value={recordsPerPage}
-        onChange={setRecordsPerPage}
+        onChange={(value) => OnChangeCompiled(value)}
+        allowDeselect={false}
       />
 
       <Pagination

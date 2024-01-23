@@ -2,8 +2,10 @@
 
 import { React, useState } from "react";
 import { ScrollArea, Table } from '@mantine/core';
-import hearingsData from "./assets/hearings.json";
-import PaginationSection from './models/paginationSection.js'
+import hearingsData from "../assets/hearings.json";
+import PaginationSection from './paginationSection.js';
+
+getCrimes()
 
 const DataTable = () => {
   const fixedJsonString = JSON.stringify(hearingsData);

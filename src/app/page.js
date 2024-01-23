@@ -1,6 +1,6 @@
 import { Image, MantineProvider } from '@mantine/core';
 import React from 'react';
-import DataTable from "./dataTable.js"
+import DataTable from "./components/dataTable.js"
 
 export default function App() {  
   return (

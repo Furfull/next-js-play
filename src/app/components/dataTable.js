@@ -5,8 +5,6 @@ import { ScrollArea, Table } from '@mantine/core';
 import hearingsData from "../assets/hearings.json";
 import PaginationSection from './paginationSection.js';
 
-getCrimes()
-
 const DataTable = () => {
   const fixedJsonString = JSON.stringify(hearingsData);
   const jsonArray = JSON.parse(fixedJsonString);

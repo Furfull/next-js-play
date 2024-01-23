@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Select, Pagination } from "@mantine/core";
+import { NativeSelect , Pagination } from "@mantine/core";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 
 const PaginationSection = ({
@@ -19,27 +19,21 @@ const PaginationSection = ({
 
   return (
     <div style={paginationContainer}>
-      <Select
-        placeholder="Limite por Página"
-        withCheckIcon={false}
+      <NativeSelect 
+        label="Limite por Página"
         rightSection={" "}
         data={["5", "10", "20"]}
         value={recordsPerPage}
-        onChange={(value) => OnChangeCompiled(value)}
-        allowDeselect={false}
+        onChange={(event) => OnChangeCompiled(event.currentTarget.value)}
+        style={{width:150}}
       />
-
       <Pagination
         total={totalPages}
         value={currentPage}
         onChange={setCurrentPage}
         nextIcon={IconArrowRight}
         previousIcon={IconArrowLeft}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-        }}
+        style={paginationCompo}
       />
     </div>
   );
@@ -52,5 +46,11 @@ const paginationContainer = {
     alignItems: "center",
     backgroundColor: 'white',
   };
+
+const paginationCompo = {
+  display: "flex",
+  justifyContent: "center",
+  width: "100%",
+}
 
 export default PaginationSection;
